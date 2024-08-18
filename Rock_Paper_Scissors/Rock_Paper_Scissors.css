@@ -1,0 +1,38 @@
+body{
+  background-color: rgb(25, 25, 25);
+  color: whitesmoke;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.p1{
+  font-size: 30px;
+  font-weight: bold;
+}
+button img{
+  width: 75%;
+}
+p img{
+  width: 40px;
+}
+.R,.P,.S{
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  background-color: rgb(25, 25, 25);
+  border: solid;
+  border-color: white;
+  cursor: pointer;
+}
+.result{
+  font-size: 20px;
+  font-weight: bold;
+}
+.Re{
+  padding: 10px;
+  background-color: whitesmoke;
+  border-radius: 14px;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: rgb(25, 25, 25);
+  cursor: pointer;
+  color: whitesmoke;
+}
