@@ -85,3 +85,32 @@ let s,cm;
         document.querySelector('.score').innerHTML = `Win: ${score.win} | Lose: ${score.lose} | Tie: ${score.tie}`;
 
       }
+      
+      let playing = false;
+
+      function stopauto(){
+        const auto = document.querySelector('.auto');
+        if (auto.innerHTML === 'Auto Play') {
+          auto.innerHTML = 'Stop Auto Play';
+          auto.classList.add('notauto');
+          playing = true;
+          document.querySelector('title ').innerHTML = 'Playing...';
+          
+        }else{
+          auto.innerHTML = 'Auto Play';
+          auto.classList.remove('notauto');
+          playing = false;
+          document.querySelector('title ').innerHTML = 'Rock Paper Scissors';
+        }
+      }
+
+      let id;
+      function autoplay(){
+        if (playing) {
+          id = setInterval(function () {
+            PlayGame(Cpick());
+          },1500);
+        }else{
+          clearInterval(id);
+        } 
+      }

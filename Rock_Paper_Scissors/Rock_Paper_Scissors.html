@@ -32,6 +32,10 @@
     localStorage.removeItem('score');
     document.querySelector('.score').innerHTML = `Win: ${score.win} | Lose: ${score.lose} | Tie: ${score.tie}`;
     "> Reset Score </button>
+    <button class="auto" onclick="
+      stopauto();
+      autoplay();
+    ">Auto Play</button>
 
     <script src="Rock_Paper_Scissors.js"></script>
   </body>
