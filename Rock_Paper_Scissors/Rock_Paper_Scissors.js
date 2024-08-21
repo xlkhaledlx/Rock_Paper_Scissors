@@ -107,10 +107,63 @@ let s,cm;
       let id;
       function autoplay(){
         if (playing) {
-          id = setInterval(function () {
+          id = setInterval(() => {
             PlayGame(Cpick());
           },1500);
         }else{
           clearInterval(id);
         } 
       }
+
+      const R = document.querySelector('.R');
+
+      R.addEventListener('click',() => {
+        PlayGame('Rock');
+      });
+
+
+      const P = document.querySelector('.P');
+
+      P.addEventListener('click',() => {
+        PlayGame('Paper');
+      });
+
+
+      const S = document.querySelector('.S');
+
+      S.addEventListener('click',() => {
+        PlayGame('Scissors');
+      });
+
+
+      const re = document.querySelector('.Re');
+
+      re.addEventListener('click',() => {
+        score.win = 0;
+        score.lose = 0;
+        score.tie = 0;
+        localStorage.removeItem('score');
+        document.querySelector('.score').innerHTML = `Win: ${score.win} | Lose: ${score.lose} | Tie: ${score.tie}`;
+      });
+
+      const auto = document.querySelector('.auto');
+
+      auto.addEventListener('click',() => {
+        stopauto();
+        autoplay();
+      });
+
+
+      document.body.addEventListener('keydown',() => {
+        if(event.key === 'r' || event.key === 'R'){
+          PlayGame('Rock');
+        }else if(event.key === 'p' || event.key === 'P'){
+          PlayGame('Paper');
+        }else if(event.key === 's' || event.key === 'S'){
+          PlayGame('Scissors');
+        }else if(event.key === 'Enter'){
+          stopauto();
+          autoplay();
+        }
+
+      });
